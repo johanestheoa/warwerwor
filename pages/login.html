@@ -11,17 +11,19 @@
         <h2>Hai!</h2>
         <p>Silahkan Login dulu ya!</p>
         <div class="formlogin">
-            <form action="">
+            <form id="form-login" action="">
                 <div class="input-group">
                     <img src="../assets/images/user.png" alt="" class="icon">
-                    <input type="text" placeholder="Username" class="input">
+                    <input name="username" type="text" placeholder="Username" class="input">
                 </div>
                 <div class="input-group">
                     <img src="../assets/images/pw.png" alt="" class="icon-right">
-                    <input type="password" placeholder="Password" class="input">
+                    <input name="password" type="password" placeholder="Password" class="input">
                 </div>
                 <button type="submit" class="loginbtn">Login</button>
             </form>
+            <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+            <script src="../js/login.js"></script>
         </div>
     </div>
 </body>
