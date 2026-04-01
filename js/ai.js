@@ -1,13 +1,13 @@
 // 1. Konfigurasi
-const API_KEY = "AIzaSyAB3M0wQLIc2HjUj59gIONRz1MjcTHuDqU";
+const API_KEY = "AIzaSyAB3M0wQLIc2HjUj59gIONRz1MjcTHuDqU"; // Gunakan Key kamu
 const URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
 
-// 2. Tangkap Elemen HTML
+// 2. Tangkap Elemen HTML (DISESUAIKAN)
 const sendBtn = document.getElementById('send-btn');
 const userInput = document.getElementById('user-input');
-const chatBox = document.getElementById('chat-box');
+const chatBox = document.getElementById('chat-container'); // Ganti dari chat-box ke chat-container
 
-// 3. Fungsi untuk mengirim pesan ke AI
+// 3. Fungsi untuk mengirim pesan ke AI (Sudah Benar)
 async function getAIResponse(prompt) {
     try {
         const response = await fetch(URL, {
@@ -19,7 +19,12 @@ async function getAIResponse(prompt) {
         });
 
         const data = await response.json();
-        // Mengambil teks jawaban dari struktur data Gemini
+        
+        // Cek jika API mengembalikan error (misal key salah)
+        if (data.error) {
+            return "Error: " + data.error.message;
+        }
+
         return data.candidates[0].content.parts[0].text;
     } catch (error) {
         console.error("Error memanggil AI:", error);
@@ -27,25 +32,26 @@ async function getAIResponse(prompt) {
     }
 }
 
-// 4. Event Listener saat tombol diklik
+// 4. Event Listener (Sudah Benar, tinggal pastikan chatBox terhubung)
 sendBtn.addEventListener('click', async () => {
     const text = userInput.value;
-    if (!text) return; // Jangan kirim kalau kosong
+    if (!text) return;
 
-    // Tampilkan pesan user di layar
-    chatBox.innerHTML += `<p><strong>Kamu:</strong> ${text}</p>`;
-    userInput.value = ""; // Kosongkan input
+    // Tampilkan pesan user
+    chatBox.innerHTML += `<div class="user-msg"><p><strong>Kamu:</strong> ${text}</p></div>`;
+    userInput.value = ""; 
 
-    // Tampilkan status loading
-    chatBox.innerHTML += `<p id="loading"><em>AI sedang berpikir...</em></p>`;
+    // Tampilkan loading
+    const loadingId = "loading-" + Date.now(); // ID unik supaya tidak bentrok
+    chatBox.innerHTML += `<p id="${loadingId}"><em>AI sedang berpikir...</em></p>`;
+    chatBox.scrollTop = chatBox.scrollHeight;
 
-    // Ambil jawaban dari AI
     const aiAnswer = await getAIResponse(text);
 
-    // Hapus tulisan loading dan tampilkan jawaban asli
-    document.getElementById('loading').remove();
-    chatBox.innerHTML += `<p><strong>AI:</strong> ${aiAnswer}</p>`;
+    // Hapus loading dan tampilkan jawaban
+    const loadingElem = document.getElementById(loadingId);
+    if (loadingElem) loadingElem.remove();
     
-    // Auto scroll ke bawah
+    chatBox.innerHTML += `<div class="bot-msg"><p><strong>AI:</strong> ${aiAnswer}</p></div>`;
     chatBox.scrollTop = chatBox.scrollHeight;
 });
