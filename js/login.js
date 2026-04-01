@@ -47,7 +47,7 @@ if (loginForm) {
             sessionStorage.setItem('username', data.username);
 
             // Pindah otomatis ke halaman chat AI
-            window.location.href = "ai-chat.html";
+            window.location.href = "chatai.html";
         }
     });
 }
