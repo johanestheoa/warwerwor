@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Ganti ke 'master' jika itu nama branch utama kamu
+      - main  # Cek apakah branch kamu 'main' atau 'master'
 
 permissions:
   contents: read
@@ -19,7 +19,7 @@ jobs:
 
       - name: Inject API Key
         run: |
-          # Perintah 'sed' akan mencari placeholder dan menggantinya dengan secret
+          # Perintah ini mengganti placeholder di ai.js dengan Secret asli
           sed -i "s/SECRET_GEMINI_KEY_PLACEHOLDER/${{ secrets.GEMINI_API_KEY }}/g" js/ai.js
 
       - name: Setup Pages
