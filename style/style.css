@@ -186,7 +186,7 @@ form{
     border: 2px solid;
     border-radius: 50px;
     box-sizing: border-box;
-    transition: all 0.3 ease;
+    transition: all 0.3s ease;
     outline: none;
 }
 
