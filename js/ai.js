@@ -1,6 +1,6 @@
 // 1. Konfigurasi
 const API_KEY = "AIzaSyAB3M0wQLIc2HjUj59gIONRz1MjcTHuDqU"; // Gunakan Key kamu
-const URL = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+const MODEL_ID = `gemini-3-flash-preview`;
 
 // Ambil nama dari sessionStorage (hasil login tadi)
 const savedUsername = sessionStorage.getItem('username');
