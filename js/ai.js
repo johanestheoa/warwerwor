@@ -1,5 +1,5 @@
 // 1. Konfigurasi
-const API_KEY = "PASTE_API_KEY_GEMINI_KAMU_DI_SINI";
+const API_KEY = "AIzaSyAB3M0wQLIc2HjUj59gIONRz1MjcTHuDqU";
 const URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
 
 // 2. Tangkap Elemen HTML
