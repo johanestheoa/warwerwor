@@ -1,5 +1,5 @@
 // 1. Konfigurasi (Pastikan URL bersih dari kata 'function')
-const API_KEY = "AIzaSyAB3M0wQLIc2HjUj59gIONRz1MjcTHuDqU";
+const API_KEY = "SECRET_GEMINI_KEY_PLACEHOLDER";
 const MODEL_ID = "gemini-3-flash-preview";
 const URL_AI = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_ID}:generateContent?key=${API_KEY}`;
 
