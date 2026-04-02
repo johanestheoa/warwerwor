@@ -51,7 +51,14 @@ sendBtn.addEventListener('click', async () => {
 
     const loadingElem = document.getElementById(loadingId);
     if (loadingElem) loadingElem.remove();
+    const formattedAnswer = marked.parse(aiAnswer);
 
-    chatBox.innerHTML += `<div class="bot-msg"><p><strong>AI:</strong> ${aiAnswer}</p></div>`;
+    chatBox.innerHTML += `
+    <div class="bot-msg">
+    <p><strong>AI:</strong></p>
+    <div class="ai-content">
+        ${formattedAnswer}
+    </div>
+    </div>`;
     chatBox.scrollTop = chatBox.scrollHeight;
 });

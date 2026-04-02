@@ -227,3 +227,30 @@ input[type="date"] {
 
 .user-msg { align-self: flex-end; background: #e1ffc7; padding: 8px; border-radius: 10px; }
 .bot-msg { align-self: flex-start; background: #f0f0f0; padding: 8px; border-radius: 10px; }
+
+/* Merapikan jarak antar paragraf di jawaban AI */
+.ai-content p {
+    margin-bottom: 10px;
+}
+
+/* Merapikan tampilan list/daftar */
+.ai-content ul, .ai-content ol {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+/* Merapikan tampilan blok kode (jika AI kasih contoh kodingan) */
+.ai-content code {
+    background-color: #f4f4f4;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.ai-content pre {
+    background-color: #2d2d2d;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
