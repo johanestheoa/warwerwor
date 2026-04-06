@@ -10,4 +10,4 @@ function gantiTeks() {
 }
 
 setInterval(gantiTeks, 200);
-window.onload = gantiTeks; // Jalankan saat halaman selesai dimuat
+window.onload = gantiTeks;
