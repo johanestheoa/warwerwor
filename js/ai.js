@@ -17,15 +17,9 @@ async function getAIResponse(prompt) {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-    // Tambahkan instruksi sistem di sini
-    system_instruction: {
-        parts: [{ text: systemInstruction }]
-    },
-    // Pastikan ada koma di sini setelah penutup kurawal instruksi
-    contents: [{ 
-        parts: [{ text: prompt }] 
-    }]
-})
+                contents: [{ parts: [{ text: prompt }] }]
+            })
+        });
 
         // Cek jika respon bukan OK (misal 405 atau 404)
         if (!response.ok) {
