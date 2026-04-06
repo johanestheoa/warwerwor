@@ -17,16 +17,29 @@ async function getAIResponse(prompt) {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-    // Tambahkan instruksi sistem di sini
-    system_instruction: {
-        parts: [{ text: systemInstruction }]
-    },
-    // Pastikan ada koma di sini setelah penutup kurawal instruksi
-    contents: [{ 
-        parts: [{ text: prompt }] 
-    }]
-})
-        // Cek jika respon bukan OK (misal 405 atau 404)
+                system_instruction: {
+                    parts: [{ text: systemInstruction }]
+                },
+                contents: [{ 
+                    parts: [{ text: prompt }] 
+                }]
+            }) // Penutup JSON.stringify
+        }); // Penutup fetch
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error("Server Error:", errorText);
+            return "Maaf, server Google menolak permintaan (Error " + response.status + ")";
+        }
+
+        const data = await response.json();
+        return data.candidates[0].content.parts[0].text;
+
+    } catch (error) {
+        console.error("Koneksi gagal:", error);
+        return "Gagal terhubung ke AI. Cek koneksi internetmu.";
+    }
+}        // Cek jika respon bukan OK (misal 405 atau 404)
         if (!response.ok) {
             const errorText = await response.text(); // Baca sebagai teks jika error
             console.error("Server Error:", errorText);
