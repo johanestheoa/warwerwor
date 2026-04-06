@@ -1,6 +1,6 @@
 // Inisialisasi Supabase di verify.js juga
 const SUPABASE_URL = "https://rdlizjplkqkxnxkguekh.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."; 
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJkbGl6anBsa3FreG54a2d1ZWtoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzAyODEsImV4cCI6MjA5MDYwNjI4MX0.rW4vUlQfipfn9nfcI4oB3TWBAblfoRwgXwBAFVu8xSM"; // Gunakan Key aslimu
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 async function validateOTP() {

@@ -81,3 +81,4 @@ userInput.addEventListener('keydown', (e) => {
         sendMessage();
     }
 });
+
