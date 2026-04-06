@@ -26,7 +26,7 @@ async function validateOTP() {
         } else {
             localStorage.removeItem('pending_user');
             alert("Verifikasi Berhasil & Data Tersimpan! Silakan Login.");
-            window.location.href = "login.html";
+            window.location.href = "../pages/login.html";
         }
     } else {
         alert("Kode OTP salah!");
