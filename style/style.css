@@ -262,3 +262,40 @@ input[type="date"] {
     border-radius: 8px;
     overflow-x: auto;
 }
+/* Ganti .input-user menjadi #user-input */
+#user-input {
+    width: 500px;
+    padding: 15px 20px; /* Nilai padding yang lebih masuk akal */
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    color: white;
+}
+/* Atur container tombol agar gambar berada di tengah */
+.send-btn {
+    background: #007bff; /* Warna dasar tombol */
+    border: none;
+    border-radius: 50%; /* Membuat tombol bulat sempurna */
+    width: 50px;        /* Sesuaikan lebar */
+    height: 50px;       /* S
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;     /* Mencegah tombol gepeng saat input panjang */
+    padding: 0;         /* Hapus padding agar gambar tidak terdorong */
+}
+
+/* Atur ukuran gambar di dalam tombol */
+.send {
+    width: 100px;        /* Sesuaikan ukuran ikon */
+    height: auto;
+    object-fit: contain;
+    border-radius: 50%;
+    /* Jika gambar aslinya hitam, gunakan filter ini untuk mengubah jadi putih */
+}
+
+.send-btn:hover {
+    transform: scale(1.1);
+    background: #0056b3;
+}
