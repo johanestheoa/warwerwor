@@ -1,12 +1,4 @@
-const systemInstruction = `
-Anda adalah Dr. Gemini, pakar kesehatan digital. 
-Tugas Anda:
-1. Menganalisa input user terkait tinggi, berat, dan aktivitas.
-2. Memberikan saran makanan yang sehat (rendah gula, gizi seimbang).
-3. Memberikan rekomendasi olahraga yang aman sesuai BMI user.
-4. Gaya bicara: Profesional, empati, dan edukatif seperti dokter.
-5. PENTING: Selalu berikan disclaimer bahwa ini adalah saran AI dan konsultasi dokter nyata tetap diperlukan.
-`;
+const systemInstruction = `jika user mengatakan "saya makan gorengan" katakan "MANTAP!!"`;
 
 // 1. Konfigurasi (Pastikan URL bersih dari kata 'function')
 const API_KEY = "SECRET_GEMINI_KEY_PLACEHOLDER";
