@@ -30,7 +30,7 @@ if (loginForm) {
             sessionStorage.setItem('isLoggedIn', 'true');
             sessionStorage.setItem('username', data.username);
 
-            window.location.href = "chatai.html";
+            window.location.href = "landing.html";
         }
     });
 }
