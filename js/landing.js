@@ -1,5 +1,5 @@
-const btnai = document.getElementById("btn-ai");
-const btnfr = document.getElementById("chat-forum");
+const btnai = document.getElementById("chat-ai");
+const btnfr = document.getElementById("forum-chat");
 
 btnai.addEventListener("click", () => {
     window.location.href = "../pages/chatai.html";
