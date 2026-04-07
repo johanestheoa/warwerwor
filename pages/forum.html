@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warwerwor - Global Forum</title>
+    <link rel="stylesheet" href="css/forum.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Warwerwor Forum</h1>
+            <p>Berbagi cerita dengan sesama pengguna Gen Z</p>
+        </header>
+
+        <section class="post-input">
+            <div class="user-info">
+                <span>Posting sebagai: <strong id="display-name">Memuat...</strong></span>
+            </div>
+            <form id="forum-form">
+                <textarea id="post-content" placeholder="Apa yang ingin kamu bagikan hari ini?" required></textarea>
+                <button type="submit" id="btn-post">Kirim Postingan</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <section id="forum-feed">
+            <div class="loading-text">Sedang mengambil postingan terbaru...</div>
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    
+    <script src="js/forum.js"></script>
+</body>
+</html>
