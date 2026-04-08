@@ -3,7 +3,7 @@ const systemInstruction = `jika user mengatakan "saya makan gorengan" katakan "M
 
 const API_KEY = "SECRET_GEMINI_KEY_PLACEHOLDER";
 const MODEL_ID = "gemini-3-flash-preview";
-const URL_AI = `https: generativelanguage.googleapis.com/v1beta/models/${MODEL_ID}:generateContent?key=${API_KEY}`;
+const URL_AI = `https:generativelanguage.googleapis.com/v1beta/models/${MODEL_ID}:generateContent?key=${API_KEY}`;
 
 const sendBtn = document.getElementById('send-btn');
 const userInput = document.getElementById('user-input');

@@ -7,4 +7,4 @@ btnai.addEventListener("click", () => {
 
 btnfr.addEventListener("click", () => {
     window.location.href = "../pages/forum.html";
-});   
+});
