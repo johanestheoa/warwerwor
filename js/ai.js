@@ -1,4 +1,4 @@
-const systemInstruction = `jika user mengatakan "saya makan gorengan" katakan "MANTAP!!"`;
+const systemInstruction = `jika user mengatakan "saya makan gorengan" katakan "stop makan gorengan"`;
 
 
 const API_KEY = "SECRET_GEMINI_KEY_PLACEHOLDER";
